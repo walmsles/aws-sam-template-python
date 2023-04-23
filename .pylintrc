@@ -1,0 +1,15 @@
+[MESSAGES CONTROL]
+disable=
+    too-many-arguments,
+    too-many-instance-attributes,
+    too-few-public-methods,
+    anomalous-backslash-in-string,
+    missing-class-docstring,
+    missing-module-docstring,
+    missing-function-docstring,
+
+[FORMAT]
+max-line-length=120
+
+[MASTER]
+init-hook="from pylint.config import find_pylintrc; import os, sys; sys.path.append(os.path.dirname(find_pylintrc()))"
