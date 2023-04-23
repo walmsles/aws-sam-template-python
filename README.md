@@ -16,14 +16,16 @@ Find the complete project's [documentation here](https://awslabs.github.io/aws-l
 
 ### Installing AWS Lambda Powertools for Python
 
-With [pip](https://pip.pypa.io/en/latest/index.html) installed, run: 
+With [pip](https://pip.pypa.io/en/latest/index.html) installed, run:
 
 ```bash
 make dev
 poetry add aws-lambda-powertools
 ```
 
-This project template enables every lambda service to have its own defined Python dependencies to ensure each lambda has the smallest possible package footprint.  Specific service level Python dependencies are added using `poetry add <dependency> --group <service_name>` where `dependency` is the required library and `service_name` is the folder under `services` which contains the lambda function.  Any centrally installed dependencies will be included, e.g. aws-lambda-powertools example above will ensure **all lambda services** have aws-lambda-powertools in their requirements.txt file.
+This project template uses `poetry` for dependency management and enables every lambda service to have its own defined Python dependencies to ensure each lambda has the smallest possible package footprint.  Specific service level Python dependencies are added using `poetry add <dependency> --group <service_name>` where `dependency` is the required library and `service_name` is the folder under `services` which contains the lambda function.  Any centrally installed dependencies will be included, for example aws-lambda-powertools installed above will ensure **all lambda services** have aws-lambda-powertools in their requirements.txt file.
+
+the `requirements.txt` files are not managed in git and will be ignored since the files are generated through the `make deps` command which runs the `scripts/make-deps.sh` script.
 
 ### Powertools Examples
 
@@ -41,11 +43,11 @@ This project contains source code and supporting files for a serverless applicat
 * services/hello_world - Code for the application's hello_world Lambda function.
 * events - Invocation events that you can use to invoke the function.
 * tests - Unit tests for the application code.
-* template.yaml - A template that defines the application's AWS resources.  
+* template.yaml - A template that defines the application's AWS resources.
 
 The application uses several AWS resources, including Lambda functions and an API Gateway API. These resources are defined in the `template.yaml` file in this project. You can update the template to add AWS resources through the same deployment process that updates your application code.
 
-If you prefer to use an integrated development environment (IDE) to build and test your application, you can use the AWS Toolkit.  
+If you prefer to use an integrated development environment (IDE) to build and test your application, you can use the AWS Toolkit.
 The AWS Toolkit is an open source plug-in for popular IDEs that uses the SAM CLI to build and deploy serverless applications on AWS. The AWS Toolkit also adds a simplified step-through debugging experience for Lambda function code. See the following links to get started.
 
 * [CLion](https://docs.aws.amazon.com/toolkit-for-jetbrains/latest/userguide/welcome.html)
@@ -94,14 +96,14 @@ Build your application with the `make build` command.
 make build
 ```
 
-The SAM CLI installs dependencies defined in `services/hello_world/requirements.txt`, creates a deployment package, and saves it in the `.aws-sam/build` folder.  The `requirements.txt` file is generated during the `make build` process based on dependencies installed in your local Python virtual environment with `poetry`.  
+The SAM CLI installs dependencies defined in `services/hello_world/requirements.txt`, creates a deployment package, and saves it in the `.aws-sam/build` folder.  The `requirements.txt` file is generated during the `make build` process based on dependencies installed in your local Python virtual environment with `poetry`.
 
 Test a single function by invoking it directly with a test event. An event is a JSON document that represents the input that the function receives from the event source. Test events are included in the `events` folder in this project.
 
 Run functions locally and invoke them with the `sam local invoke` command.
 
 ```bash
-aws-sam-template-python$ sam local invoke HelloWorldFunction --event events/event.json
+aws-sam-template-python$ sam local invoke HelloWorldFunction --event events/hello.json
 ```
 
 The SAM CLI can also emulate your application's API. Use the `sam local start-api` to run the API locally on port 3000.

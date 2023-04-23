@@ -10,3 +10,5 @@ do
         fi
     fi
 done
+
+poetry export --without-hashes --with dev > ${WORKDIR:-${PWD}}/tests/requirements.txt
