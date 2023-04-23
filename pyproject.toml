@@ -5,11 +5,10 @@ description = "Sample AWS Project Template for python with a simple, consistent 
 authors = ["walmsles <2704782+walmsles@users.noreply.github.com>"]
 license = "MIT-0"
 readme = "README.md"
-packages = [{include = "aws_sam_template_python"}]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-aws-lambda-powertools = "^2.14.1"
+aws-lambda-powertools = {extras = ["tracer"], version = "^2.14.1"}
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.3.1"
@@ -17,6 +16,7 @@ pytest-cov = "^4.0.0"
 flake8 = "^6.0.0"
 black = "^23.3.0"
 isort = "^5.12.0"
+aws-lambda-powertools = {extras = ["aws-sdk"], version = "^2.14.1"}
 
 [build-system]
 requires = ["poetry-core"]
