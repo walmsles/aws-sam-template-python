@@ -28,6 +28,10 @@ format:
 lint: format
 	@poetry run flake8 $(all_src)
 
+.PHONY: start-local
+start-local: build
+	@sam local start-api
+
 .PHONY: pre-commit
 pre-commit:
 	@pre-commit run --show-diff-on-failure
