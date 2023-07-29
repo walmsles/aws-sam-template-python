@@ -233,6 +233,31 @@ pycodestyle = ">=2.10.0,<2.11.0"
 pyflakes = ">=3.0.0,<3.1.0"
 
 [[package]]
+name = "flake8-to-ruff"
+version = "0.0.233"
+description = "Convert existing Flake8 configuration to Ruff."
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "flake8_to_ruff-0.0.233-py3-none-macosx_10_7_x86_64.whl", hash = "sha256:1a10416582c522def5e07485e46265e1b9e4d97b8172494c1f84d031ca3c44c7"},
+    {file = "flake8_to_ruff-0.0.233-py3-none-macosx_10_9_x86_64.macosx_11_0_arm64.macosx_10_9_universal2.whl", hash = "sha256:a3df36fb8d645334786b3f883e17af9f939872ecb1a8dcde5f6d42ab3b65e3f4"},
+    {file = "flake8_to_ruff-0.0.233-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:b797da16741e14ae5c67f04c0fd9e1edee17dcd9e4af8cdb329c792983df04ef"},
+    {file = "flake8_to_ruff-0.0.233-py3-none-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:3eb93f394a2169af86e490c3c048646ceba93236d9c9cc82945a928b68bad418"},
+    {file = "flake8_to_ruff-0.0.233-py3-none-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:4f478e5e59d5b5237b2204f8ffe8e72adb9ae5b7710de9fb0f671153a4ea70f9"},
+    {file = "flake8_to_ruff-0.0.233-py3-none-manylinux_2_17_ppc64.manylinux2014_ppc64.whl", hash = "sha256:d79aea40780505db0e5f1033c93e0ae93eb364992a0ee43f2c67f0fbcff7e178"},
+    {file = "flake8_to_ruff-0.0.233-py3-none-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:07590a228df94bb53b9af95ae87e9291baff6fa42622e17effb62ce3e15b76d9"},
+    {file = "flake8_to_ruff-0.0.233-py3-none-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:c84e2448c41331a76e81fd5c44046d445876e6a34e806aa1e577c08236e96066"},
+    {file = "flake8_to_ruff-0.0.233-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:d1460505be66d14b9fa4c3670a7e03b9ef02f5e12176d17926ec490cbeff2a5b"},
+    {file = "flake8_to_ruff-0.0.233-py3-none-musllinux_1_2_aarch64.whl", hash = "sha256:20df2472ce1004f3e2532f9e51adc72441ea76a03dd4dce5ac7aed3ff54f400e"},
+    {file = "flake8_to_ruff-0.0.233-py3-none-musllinux_1_2_armv7l.whl", hash = "sha256:ac6fead9f95e1d65385e04d85d6819c212d6ae71dd8248c6b5f530dcaaef3972"},
+    {file = "flake8_to_ruff-0.0.233-py3-none-musllinux_1_2_i686.whl", hash = "sha256:9eae5d614929b3f13da243957c701da9e38f233f3e45bd4fda4b195a2a79aa84"},
+    {file = "flake8_to_ruff-0.0.233-py3-none-musllinux_1_2_x86_64.whl", hash = "sha256:f7f3e13e69eeeaf65f0a93f9f6416437b038e31d8d2a3f5a2acb24b467cd9375"},
+    {file = "flake8_to_ruff-0.0.233-py3-none-win32.whl", hash = "sha256:f0409ee356cad32614be34f08ea18a36acbadf955d8380b0c036ce0d4d5bdda9"},
+    {file = "flake8_to_ruff-0.0.233-py3-none-win_amd64.whl", hash = "sha256:2e0644d0e5bc1d1e342f0a8f02b0e6bc8d12cb281be56db167c39e5c9ea25ef0"},
+    {file = "flake8_to_ruff-0.0.233.tar.gz", hash = "sha256:ee519743260fa6d263415a5c5db90c44c3958fdc42069a5b249e7648c5ac3ac8"},
+]
+
+[[package]]
 name = "iniconfig"
 version = "2.0.0"
 description = "brain-dead simple config-ini parsing"
@@ -422,6 +447,32 @@ files = [
 six = ">=1.5"
 
 [[package]]
+name = "ruff"
+version = "0.0.280"
+description = "An extremely fast Python linter, written in Rust."
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "ruff-0.0.280-py3-none-macosx_10_7_x86_64.whl", hash = "sha256:48ed5aca381050a4e2f6d232db912d2e4e98e61648b513c350990c351125aaec"},
+    {file = "ruff-0.0.280-py3-none-macosx_10_9_x86_64.macosx_11_0_arm64.macosx_10_9_universal2.whl", hash = "sha256:ef6ee3e429fd29d6a5ceed295809e376e6ece5b0f13c7e703efaf3d3bcb30b96"},
+    {file = "ruff-0.0.280-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:d878370f7e9463ac40c253724229314ff6ebe4508cdb96cb536e1af4d5a9cd4f"},
+    {file = "ruff-0.0.280-py3-none-manylinux_2_17_armv7l.manylinux2014_armv7l.whl", hash = "sha256:83e8f372fa5627eeda5b83b5a9632d2f9c88fc6d78cead7e2a1f6fb05728d137"},
+    {file = "ruff-0.0.280-py3-none-manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:7008fc6ca1df18b21fa98bdcfc711dad5f94d0fc3c11791f65e460c48ef27c82"},
+    {file = "ruff-0.0.280-py3-none-manylinux_2_17_ppc64.manylinux2014_ppc64.whl", hash = "sha256:fe7118c1eae3fda17ceb409629c7f3b5a22dffa7caf1f6796776936dca1fe653"},
+    {file = "ruff-0.0.280-py3-none-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl", hash = "sha256:37359cd67d2af8e09110a546507c302cbea11c66a52d2a9b6d841d465f9962d4"},
+    {file = "ruff-0.0.280-py3-none-manylinux_2_17_s390x.manylinux2014_s390x.whl", hash = "sha256:bd58af46b0221efb95966f1f0f7576df711cb53e50d2fdb0e83c2f33360116a4"},
+    {file = "ruff-0.0.280-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:2e7c15828d09f90e97bea8feefcd2907e8c8ce3a1f959c99f9b4b3469679f33c"},
+    {file = "ruff-0.0.280-py3-none-musllinux_1_2_aarch64.whl", hash = "sha256:2dae8f2d9c44c5c49af01733c2f7956f808db682a4193180dedb29dd718d7bbe"},
+    {file = "ruff-0.0.280-py3-none-musllinux_1_2_armv7l.whl", hash = "sha256:5f972567163a20fb8c2d6afc60c2ea5ef8b68d69505760a8bd0377de8984b4f6"},
+    {file = "ruff-0.0.280-py3-none-musllinux_1_2_i686.whl", hash = "sha256:8ffa7347ad11643f29de100977c055e47c988cd6d9f5f5ff83027600b11b9189"},
+    {file = "ruff-0.0.280-py3-none-musllinux_1_2_x86_64.whl", hash = "sha256:7a37dab70114671d273f203268f6c3366c035fe0c8056614069e90a65e614bfc"},
+    {file = "ruff-0.0.280-py3-none-win32.whl", hash = "sha256:7784e3606352fcfb193f3cd22b2e2117c444cb879ef6609ec69deabd662b0763"},
+    {file = "ruff-0.0.280-py3-none-win_amd64.whl", hash = "sha256:4a7d52457b5dfcd3ab24b0b38eefaead8e2dca62b4fbf10de4cd0938cf20ce30"},
+    {file = "ruff-0.0.280-py3-none-win_arm64.whl", hash = "sha256:b7de5b8689575918e130e4384ed9f539ce91d067c0a332aedef6ca7188adac2d"},
+    {file = "ruff-0.0.280.tar.gz", hash = "sha256:581c43e4ac5e5a7117ad7da2120d960a4a99e68ec4021ec3cd47fe1cf78f8380"},
+]
+
+[[package]]
 name = "six"
 version = "1.16.0"
 description = "Python 2 and 3 compatibility utilities"
@@ -557,4 +608,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "c25e2591f33cd56c2d56188dc62b211c76fdf2969399d61decd61589922080b5"
+content-hash = "362f9084b7ea9b3c40631d332848d7a25dedb3180d2286cf5e19aafffb477dcb"
