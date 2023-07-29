@@ -20,7 +20,7 @@ With [pip](https://pip.pypa.io/en/latest/index.html) installed, run:
 
 ```bash
 make dev
-poetry add aws-lambda-powertools
+poetry add "aws-lambda-powertools[tracer]"
 ```
 
 This project template uses `poetry` for dependency management and enables every lambda service to have its own defined Python dependencies to ensure each lambda has the smallest possible package footprint.  Specific service level Python dependencies are added using `poetry add <dependency> --group <service_name>` where `dependency` is the required library and `service_name` is the folder under `services` which contains the lambda function.  Any centrally installed dependencies will be included, for example aws-lambda-powertools installed above will ensure **all lambda services** have aws-lambda-powertools in their requirements.txt file.
@@ -61,6 +61,23 @@ The AWS Toolkit is an open source plug-in for popular IDEs that uses the SAM CLI
 * [DataGrip](https://docs.aws.amazon.com/toolkit-for-jetbrains/latest/userguide/welcome.html)
 * [VS Code](https://docs.aws.amazon.com/toolkit-for-vscode/latest/userguide/welcome.html)
 * [Visual Studio](https://docs.aws.amazon.com/toolkit-for-visual-studio/latest/user-guide/welcome.html)
+
+### Adding New Dependencies
+
+The core tenets of this project are reasonably simple:
+
+1. Manage all Python dependencies using a single tool (Poetry)
+2. Manage all dependencies centrally in a Python virtual environment so IDE type hinting just works without any laborious or continuous tweaking of IDE settings.
+3. Enable Lambda functions to have specific dependencies so that only required dependencies are installed (no unused dependencies in the Lambda package).  This ensures each Lambda package is as small as possible which is essential for managing cold start times.
+4. No editing of **requirements.txt** for any Lambda sub-folder (requirements.txt for Lambda functions are always generated).
+
+The most important tenet is the last one - making sure Lambda functions only have the dependencies they need.  To achieve this we use Poetry's **group** feature, which enables custom dependency groups to exist.  The expectation is that the **services** sub-folders contain each Lambda function (required for SAM build) and each sub-folder represents a dependency group for **Poetry**.
+
+For example, if you wanted to install the **tenacity** library into the **hello_world** service (Lambda function), you would run the following command:  `poetry add tenacity --group hello_world`.  This will add **tenacity** to the dependency group for the **hello_world** service.  If we had multiple services only **hello_world** will have the **tenacity** dependency added to its requirements.txt generated file.
+
+For adding common dependencies for all Lambda functions you can go ahead and do `poetry add "aws-lambda-powertools[tracer]"`.  All **main** dependencies added in this way will also be included in the generated requirements.txt file for all Lambda functions.
+
+The magic of creating and managing the dependencies is all done within the `scripts/make-deps.sh` bash script which iterates over the **services** sub-folders and does an export of poetry dependencies for the specific **group** (if it exists) and also **main**.  It does also force some folder structure requirements on you for the project - but I feel that is okay, because currently Lambda folders for SAM Cli example projects are all over the place anyway - so some opinionated structure is always helpful!
 
 ### Deploy the sample application
 
