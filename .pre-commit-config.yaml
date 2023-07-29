@@ -8,28 +8,21 @@ repos:
             - id: end-of-file-fixer
     -   repo: local
         hooks:
-            - id: ruff
-              args: ["--check", "."]
-              name: formatting::ruff
-              entry: poetry run ruff
+            - id: isort
+              args: ["--profile", "black"]
+              name: foramtting::isort
+              entry: poetry run isort
               language: system
               types: [python]
-            # - id: isort
-            #   args: ["--profile", "black"]
-            #   name: foramtting::isort
-            #   entry: poetry run isort
-            #   language: system
-            #   types: [python]
-            # - id: black
-            #   name: foramtting::black
-            #   entry: poetry run black
-            #   language: system
-            #   types: [python]
+            - id: black
+              name: foramtting::black
+              entry: poetry run black
+              language: system
+              types: [python]
     -   repo: local
         hooks:
-            - id: ruff
-              args: ["--check", "."]
-              name: formatting::ruff
-              entry: poetry run ruff
+            - id: flake8
+              name: linting::flake8
+              entry: poetry run flake8
               language: system
               types: [python]
