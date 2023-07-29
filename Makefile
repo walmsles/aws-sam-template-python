@@ -36,7 +36,7 @@ start-local: build
 pre-commit:
 	@pre-commit run --show-diff-on-failure
 
-.PHONY: synth
+.PHONY: build
 build: deps
 	@poetry run sam build --use-container
 
